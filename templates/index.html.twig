@@ -1,0 +1,13 @@
+{# templates/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Movie Library</h1>
+
+    <ul>
+        {% for movie in movies %}
+            <li>{{ movie.Title }} - {{ movie.Director }} ({{ movie.year }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+{# templates/add.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Add a Movie</h1>
+
+    {% if form_errors(form) %}
+        <div class="alert alert-danger">
+            {{ form_errors(form) }}
+        </div>
+    {% endif %}
+
+    {{ form_start(form) }}
+    <div>
+        {{ form_label(form.Title) }}
+        {{ form_widget(form.Title) }}
+    </div>
+    <div>
+        {{ form_label(form.year) }}
+        {{ form_widget(form.year) }}
+    </div>
+    <div>
+        {{ form_label(form.Director) }}
+        {{ form_widget(form.Director) }}
+    </div>
+    {# Add other fields as needed #}
+    <button type="submit">Add Movie</button>
+    {{ form_end(form) }}
+{% endblock %}
